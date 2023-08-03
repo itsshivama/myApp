@@ -6,13 +6,25 @@
 
 <!-- <p>{{serverName}}</p> -->
 
-<input type="text" class="form-control" [(ngModel)] = "username">
+<!-- <input type="text" class="form-control" [(ngModel)] = "username">
 <p>{{username}}</p>
-<button class="btn btn-primary" [disabled]="username===''" (click)="username=''">Reset User</button>
+<button class="btn btn-primary" [disabled]="username===''" (click)="username=''">Reset User</button> -->
 
-<button class="btn btn-primary" style="margin: 8px;" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
+<button class="btn btn-primary" style="margin: 8px 0px;" [disabled]="!allowNewServer" (click)="onCreateServer()">Add
+    Server</button>
 
-<p>{{ serverCreatiionStatus }}</p>
+<!-- <p>{{ serverCreatiionStatus }}</p> -->
 
-<app-server></app-server>
-<app-server></app-server>
+<p *ngIf="serverCreated">Server was created with a server name {{serverName}}</p>
+<!-- ; else noServer <ng-template #noServer>
+    <p>
+        No server was Created!
+    </p>
+</ng-template> -->
+
+<!-- Alternative to using Else statement -->
+<p *ngIf="!serverCreated">Server <strong>DOES NOT</strong> exist!!!</p>
+
+<app-server *ngFor="let server of servers"></app-server>
+<br><br><hr><br><br>
+<app-assignments></app-assignments>

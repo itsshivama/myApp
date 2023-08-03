@@ -1,0 +1,25 @@
+<!-- Assignment 3 -->
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <ol>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque alias repudiandae eaque, error
+                    beatae perspiciatis.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ratione aperiam atque earum
+                    sapiente fugiat.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam animi neque, deleniti aliquid libero
+                    molestias?</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et eligendi, dolore minus atque laborum
+                    quas?</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, repellendus incidunt rem fugit atque
+                    deleniti?</li>
+            </ol>
+            <hr>
+            <!-- <button class="btn btn-primary" (click)="showSecret = !showSecret">Display Toggle</button> -->
+            <button class="btn btn-primary" (click)="onToggleDetails()">Display Toggle</button>
+            <p *ngIf="showSecret">Secret Password = Minions</p>
+            <div *ngFor="let logItem of log; let i = index" [ngStyle]="{backgroundColor: i>4?'blue':'transparent'}"
+                [ngClass]="{'white-text': i>4}">{{logItem}}</div>
+        </div>
+    </div>
+</div>
